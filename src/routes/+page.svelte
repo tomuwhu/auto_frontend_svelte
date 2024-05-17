@@ -4,12 +4,10 @@
     var x = 5
 </script>
 <h1>Gyökér {data.post}</h1>
-{#if form?.x1}
-Utcsó: {form.x1}
-{/if}
+{#if form?.x1}Utolsó: {form.x1} {/if}
 <h2>
     <button on:click={() => x--}>-</button>
-    {x}
+        {x}
     <button on:click={() => x++}>+</button>
 </h2>
 <form method="post">
@@ -22,8 +20,7 @@ Utcsó: {form.x1}
 <hr>
 <div class="c">
 {#each data.all as item}
-<div>{item.x1}</div>
-<div>{item.x2}</div>
+<div>{item.x1}</div> <div>{item.x2}</div>
 {/each}
 </div>
 <style>

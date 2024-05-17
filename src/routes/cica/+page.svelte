@@ -1,6 +1,3 @@
-<script>
-
-</script>
 <h1>Cica, vagy semmi</h1>
 <h2>Játszótér</h2>
 <style>
