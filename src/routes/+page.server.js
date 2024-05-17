@@ -2,8 +2,8 @@ import Database from 'better-sqlite3'
 const db = new Database('mydb.db')
 var x = 2
 export function load() {
-    const stmt = db.prepare('SELECT * FROM t1').all()
-	return { post: x++, all: stmt }
+    const all = db.prepare('SELECT * FROM t1').all()
+	return { post: x++, all }
 }
 export const actions = {
 	default: async ({ request }) => {
