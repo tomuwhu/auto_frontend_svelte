@@ -26,6 +26,9 @@ a.active {
 }
 a {
     all:unset;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 16px;
     padding: 5px;
     padding-left: 20px;
     padding-right: 20px;
