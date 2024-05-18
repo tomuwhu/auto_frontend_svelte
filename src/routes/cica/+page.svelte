@@ -19,6 +19,19 @@
     h1 {
         color: rgb(90, 27, 27);
         text-shadow: 1px 1px 3px gray;
+        user-select: none;
+        cursor: none;
+    }
+    h1:hover {
+        animation: 3s pulse;
+    }
+    @keyframes pulse {
+        0% {
+            filter: blur(1px);
+        }
+        100% {
+            filter: blur(30px);
+        }
     }
     div.c {
         display: inline-grid;
