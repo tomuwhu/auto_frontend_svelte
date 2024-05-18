@@ -1,5 +1,12 @@
+<script>
+    import { page } from '$app/stores'
+    $: currentRoute = $page.url.pathname
+    const menu = [{name: 'Home', href: '/'}, {name: 'Cica', href: '/cica'}]
+</script>
 <div class="menu">
-    <a href="/">Home</a> | <a href="/cica">Cica</a>
+    {#each menu as item}
+        <a class={currentRoute === item.href ? 'active' : ''} href={item.href}>{item.name}</a>
+    {/each}
 </div>
 <slot />
 <style>
@@ -9,17 +16,24 @@
     text-align: center;
 }
 .menu {
+    text-align: right;
     background-color: black;
     color: white;
+}
+a.active {
+    background-color: white;
+    color: black;
 }
 a {
     all:unset;
     padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
     display: inline-block;
     cursor: pointer;
 }
 a:hover {
-    background-color: white;
-    color: black;
+    background-color: rgb(185, 185, 185);
+    color: rgb(57, 57, 57);
 }
 </style>
