@@ -6,10 +6,12 @@
 <h1>Gyökér {data.post}</h1>
 {#if form?.x1}Utolsó: {form.x1} {/if}
 <h2>
+    Reactív elem példa:
     <button on:click={() => x--}>-</button>
         {x}
     <button on:click={() => x++}>+</button>
 </h2>
+<h2>Form + Adatbázis Full-Stack Példa</h2>
 <form method="post">
     <label for="x1">Állat neve:</label>
     <input type="text" name="x1" id="x1">
