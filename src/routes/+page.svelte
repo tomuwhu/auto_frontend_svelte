@@ -2,7 +2,7 @@
     import { fade } from 'svelte/transition'
     export let data
     export let form
-    var x = 5
+    var x = data.post
 </script>
 <h1>Gyökér {data.post}</h1>
 {#if form?.x1}Utolsó: {form.x1} {/if}
