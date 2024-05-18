@@ -1,18 +1,32 @@
 <script>
+    import { fade } from 'svelte/transition'
     var l = [
-        {type: 'text', name: "x1"},
+        {type: 'tel', name: "x1"},
         {type: 'range', name: "x2", min: 0, max: 100},
         {type: 'number', name: "x3"},
         {type: 'date', name: "x4"},
         {type: 'color', name: "x5"},
-    ], vl = [5, 20, 15, '2021-10-01', '#456743']
+        {type: 'password', name: "x6"},
+        {type: 'search', name: "x7"},
+        {type: 'datetime-local', name: "x8"},
+    ], vl = [5, 20, 15, '2021-10-01', '#456743', '1234','Cica', ''], lx = []
+    var anim = setInterval(() => {
+        if (l.length > 0) {
+            lx.push(l.shift())
+            lx = lx
+        } else {
+            clearInterval(anim)
+        }
+    }, 300)
 </script>
 <h1>Cica, vagy semmi</h1>
 <h2>Form elemek</h2>
 <div class="c">
-{#each l as o, i}
-    <div><input type="text" {...o} bind:value={vl[i]}></div>
-    <div>{vl[i]}</div>
+{#each lx as o, i (i)}
+    <div class="c" transition:fade>
+        <div><input type="text" {...o} bind:value={vl[i]}></div>
+        <div>{vl[i]}</div>
+    </div>
 {/each}
 </div>
 <style>
