@@ -31,9 +31,15 @@ a {
     padding-right: 20px;
     display: inline-block;
     cursor: pointer;
+    transition: 0.4s;
 }
 a:hover {
     background-color: rgb(185, 185, 185);
     color: rgb(57, 57, 57);
+}
+a:hover.active {
+    background-color: white;
+    color: black;
+    cursor: default;
 }
 </style>
