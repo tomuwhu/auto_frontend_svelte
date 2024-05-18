@@ -1,5 +1,5 @@
 <script>
-    import { fade } from 'svelte/transition'
+    import { blur } from 'svelte/transition'
     export let data
     export let form
     var x = data.post
@@ -10,9 +10,10 @@
     Reactív elem példa:
     <button on:click={() => x--}>-</button>
         <div class=xc>
-        {#key x}<span in:fade out:fade>{x}</span>{/key}
+        {#key x}<span in:blur out:blur>{x}</span>{/key}
         </div>
     <button on:click={() => x++}>+</button>
+    <hr>
 </h2>
 <h2>Form + Adatbázis Full-Stack Példa</h2>
 <form method=post>
@@ -25,7 +26,7 @@
 <hr>
 <div class="c">
 {#each data.all as item}
-<div>{item.x1}</div> <div>{item.x2}</div>
+<div>{item.x1}</div><div>{item.x2}</div>
 {/each}
 </div>
 <style>
