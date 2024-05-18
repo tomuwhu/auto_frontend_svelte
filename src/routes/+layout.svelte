@@ -1,5 +1,5 @@
 <div class="menu">
-    <a href="/">Home</a> | <a href="/cica">Cica</a> | <a href="/auto">Autók</a>
+    <a href="/">Home</a> | <a href="/cica">Cica</a>
 </div>
 <slot />
 <style>
