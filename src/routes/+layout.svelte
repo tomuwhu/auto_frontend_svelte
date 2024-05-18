@@ -41,5 +41,6 @@ a:hover.active {
     background-color: white;
     color: black;
     cursor: default;
+    box-shadow: 0px 0px 10px inset red;
 }
 </style>
