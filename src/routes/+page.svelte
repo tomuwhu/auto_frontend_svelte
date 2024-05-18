@@ -1,4 +1,5 @@
 <script>
+    import { fade } from 'svelte/transition'
     export let data
     export let form
     var x = 5
@@ -8,15 +9,17 @@
 <h2>
     Reactív elem példa:
     <button on:click={() => x--}>-</button>
-        {x}
+        <div class=xc>
+        {#key x}<span in:fade out:fade>{x}</span>{/key}
+        </div>
     <button on:click={() => x++}>+</button>
 </h2>
 <h2>Form + Adatbázis Full-Stack Példa</h2>
-<form method="post">
-    <label for="x1">Állat neve:</label>
-    <input type="text" name="x1" id="x1">
-    <label for="x1">Állat mérete:</label>
-    <input type="number" name="x2" id="x2">
+<form method=post>
+    <label for=x1>Állat neve:</label>
+    <input type=text name=x1 id=x1>
+    <label for=x1>Állat mérete:</label>
+    <input type=number name=x2 id=x2>
     <button>Felvesz</button>
 </form>
 <hr>
@@ -26,6 +29,17 @@
 {/each}
 </div>
 <style>
+    div.xc {
+        width: 100px;
+        display: inline-block;
+        border: 1px solid black;
+        padding: 6px;
+        border-radius: 6px;
+        margin: 2px;
+        background-color: rgb(213, 212, 212);
+        box-shadow: 1px 1px 3px inset black;
+        text-shadow: 1px 1px 3px gray
+    }
 .c {
     display: inline-grid;
     grid-template-columns: repeat(2, 1fr);
